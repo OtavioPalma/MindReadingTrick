@@ -1,13 +1,21 @@
-<div class="container">
+<div class="container" [@animate]="currentState">
   <div class="d-flex justify-content-center align-items-center">
     <h2>{{ this.title }}</h2>
   </div>
   <div class="row d-flex justify-content-between align-items-center">
-    <div class="row cardRow {{i}}" (click)="choose($event)" *ngFor="let number of [0, 1, 2]; let i = index">
-      <div class="row {{i}}" *ngFor="let card of this.pileService.getRowCards(i)">
-        <div class="col-1">
-          <img [src]="card.image" class="card m-2" />
-        </div>
+    <div class="cardRow row">
+      <div (click)="shuffleRow(1)" *ngFor="let card of this.pileService.rowOne">
+        <img [src]="card.image" class="card m-2" />
+      </div>
+    </div>
+    <div class="cardRow row">
+      <div (click)="shuffleRow(2)" *ngFor="let card of this.pileService.rowTwo">
+        <img [src]="card.image" class="card m-2" />
+      </div>
+    </div>
+    <div class="cardRow row">
+      <div (click)="shuffleRow(3)" *ngFor="let card of this.pileService.rowThree">
+        <img [src]="card.image" class="card m-2" />
       </div>
     </div>
   </div>
@@ -16,7 +24,7 @@
     <button
       *ngIf="this.step == 0"
       class="btn btn-dark btn-round text-uppercase col-lg-2 col-md-4 col-sm-6"
-      (click)="shuffle()"
+      (click)="shuffleDeck()"
     >
       Proceed
     </button>

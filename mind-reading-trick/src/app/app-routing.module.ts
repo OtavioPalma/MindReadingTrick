@@ -3,7 +3,8 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { HomeComponent } from "./home/home.component";
 import { HowtoComponent } from "./howto/howto.component";
-import { PlayComponent } from './play/play.component';
+import { PlayComponent } from "./play/play.component";
+import { EndComponent } from "./end/end.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: "play",
     component: PlayComponent
+  },
+  {
+    path: "end",
+    component: EndComponent
   },
   {
     path: "howto",
