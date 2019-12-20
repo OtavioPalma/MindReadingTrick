@@ -1,6 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { trigger, state, style, transition, animate } from "@angular/animations";
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from "@angular/animations";
 
 import { PileService } from "src/services/pile.service";
 import { Card } from "../model/Card";
@@ -10,10 +16,13 @@ import { Card } from "../model/Card";
   templateUrl: "./end.component.html",
   styleUrls: ["./end.component.sass"],
   animations: [
-    trigger("animate", [ 
-      state("initial", style({
-         opacity: 0 
-      })),
+    trigger("animate", [
+      state(
+        "initial",
+        style({
+          opacity: 0
+        })
+      ),
       transition("initial=>final", animate("300ms ease-in"))
     ])
   ]
@@ -21,6 +30,7 @@ import { Card } from "../model/Card";
 export class EndComponent implements OnInit {
   currentState: string = "initial";
   pickedCard: Card = new Card();
+  error: boolean = false;
 
   constructor(private pileService: PileService, private router: Router) {}
 
@@ -36,5 +46,9 @@ export class EndComponent implements OnInit {
     } else {
       this.pickedCard = this.pileService.pickedCard;
     }
+  }
+
+  setError() {
+    this.error = true;
   }
 }

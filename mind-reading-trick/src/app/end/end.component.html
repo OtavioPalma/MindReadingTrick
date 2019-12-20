@@ -1,4 +1,8 @@
-<div class="container" [@animate]="currentState" *ngIf="this.pileService.pileId != ''">
+<div
+  class="container"
+  [@animate]="currentState"
+  *ngIf="this.pileService.pileId != ''"
+>
   <div class="d-flex justify-content-center align-items-center">
     <h2>Ok, here's your card:</h2>
   </div>
@@ -15,8 +19,17 @@
     </button>
   </div>
   <div class="d-flex justify-content-center align-items-center p-2">
-    <button class="btn btn-danger btn-round text-uppercase col-md-4 col-sm-12">
+    <button
+      class="btn btn-danger btn-round text-uppercase col-md-4 col-sm-12"
+      (click)="setError()"
+    >
       That's not my card!
     </button>
+  </div>
+  <div class="offset-3 col-6 mt-3">
+    <div *ngIf="error" class="alert alert-danger font-weight-bold" role="alert">
+      If this is not your card you must have clicked wrong or lied to me! Try
+      again!
+    </div>
   </div>
 </div>
