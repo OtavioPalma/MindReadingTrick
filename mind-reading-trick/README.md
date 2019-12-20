@@ -1,27 +1,21 @@
-# MindReadingTrick
+# Mind Reading Trick
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+A Angular project that demonstrates the 21-card-trick.
 
-## Development server
+## How to Play
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Instructions available on Home Page 
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+These instructions will get you a copy of the project up and running on your local machine.
 
-## Build
+* Clone or Download the Project
+* Run `npm install` to install the dependencies in the local node_modules folder.
+* Run `ng serve --open`, the dev server will load and open in your default web browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Built With
 
-## Running unit tests
+* Angular CLI version 8.3.20
+* [Deck of Cards API](http://deckofcardsapi.com/ "Deck of Cards API")
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

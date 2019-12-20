@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { trigger, state, style, transition, animate } from "@angular/animations";
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from "@angular/animations";
 import { Router } from "@angular/router";
 
 import { ApiService } from "src/services/api.service";
@@ -10,10 +16,13 @@ import { PileService } from "src/services/pile.service";
   templateUrl: "./play.component.html",
   styleUrls: ["./play.component.sass"],
   animations: [
-    trigger("animate", [ 
-      state("initial", style({
-         opacity: 0 
-      })),
+    trigger("animate", [
+      state(
+        "initial",
+        style({
+          opacity: 0
+        })
+      ),
       transition("initial=>final", animate("750ms ease-in-out"))
     ])
   ]
@@ -22,6 +31,7 @@ export class PlayComponent implements OnInit {
   currentState: string = "initial";
   step: number = 0;
   title: string = "Choose a card, memorize it and proceed!";
+  loading: boolean = true;
 
   constructor(
     private apiService: ApiService,
@@ -44,6 +54,7 @@ export class PlayComponent implements OnInit {
         // Gets the new custom pile
         this.apiService.getPile(res.deck_id).subscribe(res => {
           this.pileService.setPile(res);
+          this.loading = false;
         });
       });
     });
@@ -51,6 +62,7 @@ export class PlayComponent implements OnInit {
 
   shuffleDeck() {
     this.currentState = "initial";
+    this.loading = true;
 
     // Shuffle the pile
     this.apiService.shufflePile(this.pileService.pileId).subscribe(res => {
@@ -59,6 +71,7 @@ export class PlayComponent implements OnInit {
         this.pileService.setPile(res);
         this.step++;
         this.title = "Now tell me in which row is your card:";
+        this.loading = false;
       });
     });
 
