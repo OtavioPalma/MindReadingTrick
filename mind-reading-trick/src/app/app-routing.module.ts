@@ -6,6 +6,7 @@ import { HowtoComponent } from "./howto/howto.component";
 import { PlayComponent } from "./play/play.component";
 import { EndComponent } from "./end/end.component";
 
+// Angular routes to allow one view navigation (SPA feature)
 const routes: Routes = [
   {
     path: "home",

@@ -10,7 +10,6 @@ import {
 @Component({
   selector: "app-howto",
   templateUrl: "./howto.component.html",
-  styleUrls: ["./howto.component.sass"],
   animations: [
     trigger("animate", [
       state(
@@ -29,6 +28,7 @@ export class HowtoComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Change state to run animation
     if ((this.currentState = "initial")) {
       setTimeout(() => {
         this.currentState = "final";

@@ -10,7 +10,6 @@ import {
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.sass"],
   animations: [
     trigger("animate", [
       state(
@@ -29,6 +28,7 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Change state to run animation
     if ((this.currentState = "initial")) {
       setTimeout(() => {
         this.currentState = "final";

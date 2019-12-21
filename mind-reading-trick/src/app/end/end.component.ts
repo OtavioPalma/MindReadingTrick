@@ -14,7 +14,6 @@ import { Card } from "../model/Card";
 @Component({
   selector: "app-end",
   templateUrl: "./end.component.html",
-  styleUrls: ["./end.component.sass"],
   animations: [
     trigger("animate", [
       state(
@@ -35,12 +34,14 @@ export class EndComponent implements OnInit {
   constructor(private pileService: PileService, private router: Router) {}
 
   ngOnInit() {
+    // Change state to run animation
     if ((this.currentState = "initial")) {
       setTimeout(() => {
         this.currentState = "final";
       }, 300);
     }
 
+    // If accessed improperly returns to home page
     if (this.pileService.pileId == "") {
       this.router.navigateByUrl("/home");
     } else {
@@ -48,6 +49,7 @@ export class EndComponent implements OnInit {
     }
   }
 
+  // Shows alert
   setError() {
     this.error = true;
   }
