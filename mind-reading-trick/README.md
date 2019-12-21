@@ -1,6 +1,6 @@
 # Mind Reading Trick
 
-A Angular project that demonstrates the 21-card-trick.
+An Angular project that demonstrates the 21-card-trick.
 
 ## How to Play
 
