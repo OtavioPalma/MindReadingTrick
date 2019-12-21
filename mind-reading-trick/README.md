@@ -19,3 +19,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Angular CLI version 8.3.20
 * [Deck of Cards API](http://deckofcardsapi.com/ "Deck of Cards API")
 
+## Missing Features
+
+* Application responsiveness
+* Automated Tests
